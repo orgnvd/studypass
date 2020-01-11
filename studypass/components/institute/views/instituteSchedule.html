@@ -1,0 +1,35 @@
+<div class="instituteSchedule">
+
+    <div class="rowContainer" ng-repeat="schedule in instituteData">
+        <div class="topicContainer">
+            {{schedule.topic_name}}
+        </div>
+        <div class="examContainer">
+            <span class="examsName" ng-repeat="exam in schedule.exams">
+                {{exam}}
+            </span>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="slotRow" ng-repeat="lecture in schedule.lectures">
+            <div class="leftView">
+                <span class="dateContainer">
+                    {{ lecture.lecture_start_time | date :"dd MMM"}}
+                </span>
+                <span>{{ lecture.lecture_start_time | date :"h:mma"}}</span>
+                <span>to</span>
+                <span>{{ lecture.lecture_end_time | date :"h:mma"}}</span>
+                <span class="examName" ng-repeat="exam in lecture.exams">
+                        {{exam}}
+                </span>
+            </div>
+            <div class="rightView">
+                <span class="lectureName">
+                    {{lecture.lecture_name}}
+                </span>
+                <span class="credits">Credits:{{lecture.credits}}</span>
+                <span class="btn btn-primary btn-sm" ng-click="openSlotDetails(schedule,lecture)">Book now</span>
+            </div>
+        </div>
+    </div>
+</div>

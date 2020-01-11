@@ -1,0 +1,53 @@
+<div class="institutePage" ng-init="fetchInstituteData()">
+    <div class="instituteContainer">
+
+        <div class="searchBlock">
+            <div class="resultContainer">
+                <div class="topPanel row">
+                    <div class="instituteDetails">
+                        <div class="wrapper">
+                            <div class="imageSection">
+                                <div class="image">
+                                    <img ng-src="{{ instituteDisplayData.image ? instituteDisplayData.image  : 'components/assets/images/default_institute_image.jpeg'}}"></img>
+                                </div>
+                            </div>
+                            <div class="detailsSection">
+                                <div><span class="insti_name">{{instituteDisplayData.name}}</span></div>
+                                <div class="address">
+                                    <span class="glyphicon glyphicon-pushpin"></span>
+                                    <span>{{instituteDisplayData.detail}}</span>
+                                </div>
+                            </div>
+                            <div class="dots">
+                                    <div class="square">
+
+                                    </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="leftSec">&nbsp;</div>
+                    <div class="rightSec">
+                        <div ng-include="'components/search/views/appliedFilters.html'"></div>
+                    </div>
+                </div>
+                <div class="middleRow">
+                    <div class="leftPanel leftSec shadow-none p-3 mb-5 bg-light rounded">
+
+                        <div class="leftPanelContainer">
+                            <div ng-include="'components/commons/searchFilters/searchFilters.html'"></div>
+                        </div>
+
+                    </div>
+                    <div class="rightPanel rightSec">
+                        <div class="rightPanelContainer">
+                            <div ng-include="'components/institute/views/instituteSchedule.html'"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

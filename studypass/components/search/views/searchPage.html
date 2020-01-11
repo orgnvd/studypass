@@ -1,0 +1,34 @@
+<div>
+    <div ng-include="'components/commons/searchFilters/searchbar.html'"></div>
+</div>
+
+<div  ng-if='!searchResultsError' class="searchPageContainer">
+
+    <div class="searchBlock">
+        <div class="resultContainer">
+            <div class="topPanel row">
+                <div class="leftSec">&nbsp;</div>
+                <div class="rightSec">
+                   <div ng-include="'components/search/views/appliedFilters.html'"></div>
+                </div>
+            </div>
+            <div class="middleRow">
+                <div class="leftPanel leftSec shadow-none p-3 mb-5 bg-light rounded">
+
+                    <div class="leftPanelContainer">
+                        <div ng-include="'components/commons/searchFilters/searchFilters.html'"></div>
+                    </div>
+
+                </div>
+                <div class="rightPanel rightSec">
+                    <div class="rightPanelContainer">
+                       <div ng-include="'components/search/views/searchResultRow.html'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div ng-if="searchResultsError" ng-include="'components/errorPage/errorPage.html'">
+</div>

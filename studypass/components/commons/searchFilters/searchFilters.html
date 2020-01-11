@@ -1,0 +1,131 @@
+<div>
+    <div class="titleContainer">
+        <span class="title">FILTER</span>
+        <div class="resetButton">
+            <button type="button" class="btn btn-primary btn-sm" ng-click="resetFilters()">Reset</button>
+        </div>
+    </div>
+    <div class="topicsContainer">
+        <div class="title">TOPICS</div>
+        <!--<div class="searchTopics">
+        <div class="">
+           <input type="text"  placeholder="search topics">
+        </div>
+        </div>-->
+        <div class="topicsBlock">
+            <div ng-repeat="(subject_id, topic) in all_filters.topics" >
+                <input type="radio" name='topic' ng-value="subject_id" ng-click="selectTopic(subject_id)" ng-checked="requestData.topicId==subject_id"><span>{{topic.subject_name}}</span>
+                <div class="subTopicsBlock">
+
+                    <div class="subTopicName" ng-repeat="(key,name) in topic.sub_topics" ng-if="requestData.topicId==subject_id">
+                        <input type="checkbox"
+                               name="topic_ids"
+                               value="{{key}}"
+                               ng-checked="requestData.topic_ids.indexOf(key)> -1"
+                               ng-click="toggleSubTopics(key)"
+                        >
+                        <span>{{name}}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="locationContainer">
+        <div class="title">locality</div>
+        <!--<div class="searchLocation">
+            <div class="">
+                <input type="text" placeholder="where do you want to study">
+            </div>
+        </div>-->
+        <div class="topicsBlock">
+            <div  class="sublocationWrapper" ng-repeat="(location_id, location) in all_filters.locations" ng-hide="instituteDisplayData.instituteDetailsFlow &&requestData.locationId && location_id!=requestData.locationId">
+                <input type="radio" name='location' ng-value="location_id" ng-click="selectCity(location_id)" ng-checked="location_id==requestData.locationId"><span>{{location.city_name}}</span>
+                <div class="subLocationsBlock">
+
+                    <div class="subLocationName" ng-repeat="(key,subLocation) in location.locations" ng-if="location_id==requestData.locationId">
+                        <input type="checkbox"
+                               name="subLocation"
+                               value="{{key}}"
+                               ng-checked="requestData.location_ids.indexOf(key)> -1"
+                               ng-click="toggleSubLocations(key)">
+                        <span>{{subLocation}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="timeContainer">
+        <div class="title">TIME PERIOD</div>
+        <div class="showMore">^</div>
+        <div class="timeBlock">
+
+            <div class="input-group">
+                <input name="startDate" type="text"
+                       ng-model="requestData.startDate"
+                       uib-datepicker-popup="dd.MM.yyyy"
+                       placeholder="from date"
+                       is-open="startDateForm"
+                       datepicker-options="{'show-weeks' : false}"
+                       date-disabled="disabled(date, mode)"
+                       close-text="close"
+                       clear-text="clear"
+                       current-text="today"
+                       ng-change="applyDateSearch()"
+                       class="form-control" data-placement="bottom">
+                <div class="input-group-btn clndrIconNew" id="start_date">
+                    <button type="button"
+                            class="btn btn-default glyphicon glyphicon-calendar fIcon icon-appointment3"
+                            ng-click="startDateForm = !startDateForm">
+                    </button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input name="endDate" type="text"
+                       ng-model="requestData.endDate"
+                       uib-datepicker-popup="dd.MM.yyyy"
+                       placeholder="To date"
+                       is-open="endDateForm"
+                       datepicker-options="{'show-weeks' : false}"
+                       date-disabled="disabled(date, mode)"
+                       close-text="close"
+                       clear-text="clear"
+                       current-text="today"
+                       ng-change="applyDateSearch()"
+                       class="form-control" data-placement="bottom">
+
+                <div class="input-group-btn clndrIconNew" id="end_date">
+                    <button type="button"
+                            class="btn btn-default glyphicon glyphicon-calendar fIcon icon-appointment3"
+                            ng-click="endDateForm = !endDateForm">
+                    </button>
+                </div>
+            </div>
+
+            <div class="timeSlot">
+                <div class="morningFilter" ng-repeat="(key,value) in all_filters.time_slot">
+                    <input type="checkbox" value="{{key}}" name="timeSlot"
+                           ng-click="toggleTimeSlot(key)"
+                           ng-checked="requestData.time_slot.indexOf(key)> -1"/>
+                    <span>{{key}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="examContainer">
+        <div class="title">EXAMS TYPE</div>
+        <div class="examBlock">
+            <div class="examName" ng-repeat="exam in all_filters.exams">
+                <input type="checkbox"  name='exams' value="{{exam}}"
+                       ng-click="toggleExamTypes(exam)"
+                       ng-checked="requestData.exams.indexOf(exam)> -1"/>
+                <span>{{exam}}</span>
+            </div>
+        </div>
+
+    </div>
+</div>

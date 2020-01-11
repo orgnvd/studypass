@@ -1,0 +1,4 @@
+<div class="appHeader">
+    <div ng-if="!isLoggedInUser" ng-include="'components/generalHeader/defaultHeader.html'"></div>
+    <div ng-if="isLoggedInUser" ng-include="'components/generalHeader/loggedInUserHeader.html'"></div>
+</div>

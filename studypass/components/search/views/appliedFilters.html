@@ -1,0 +1,39 @@
+<span class="appliedFilter">
+                        <div class="filterContainer">
+                           <span class="filter tag label label-info" ng-repeat="exam in selected_filters.exams"><span>{{exam}}</span>
+                               <a ng-click="removeSelectedFilter(exam,'examFilter')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+                           </span>
+                            <span class="filter tag label label-info" ng-repeat="time_slot in selected_filters.time_slot"><span>{{time_slot}}</span>
+                               <a ng-click="removeSelectedFilter(time_slot,'timeFilter')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+                           </span>
+
+                           <!--  <span class="filter tag label label-info" ng-if="selected_filters.subject_id"><span>{{all_filters.topics[selected_filters.subject_id].subject_name}}</span>
+                               <a ng-click="removeSelectedFilter(selected_filters.subject_id,'topicFilter')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+                           </span>-->
+
+                             <span class="filter tag label label-info" ng-repeat="subtopicId in selected_filters.topic_ids"><span>{{all_filters.topics[selected_filters.subject_id].sub_topics[subtopicId]}}</span>
+                               <a ng-click="removeSelectedFilter(subtopicId,'subTopicFilter')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+                           </span>
+
+                              <span class="filter tag label label-info" ng-repeat="locationId in selected_filters.location_ids"><span>{{all_filters.locations[selected_filters.city_id].locations[locationId]}}</span>
+                               <a ng-click="removeSelectedFilter(locationId,'locatonFilter')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+                           </span>
+
+                            <span class="filter tag label label-info" ng-if="selected_filters.start_date"><span>{{selected_filters.start_date}}</span>
+                               <a ng-click="removeSelectedFilter('','startDateFilter')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+                           </span>
+
+                            <span class="filter tag label label-info" ng-if="selected_filters.end_date"><span>{{selected_filters.end_date}}</span>
+                               <a ng-click="removeSelectedFilter('','endDateFilter')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+                           </span>
+                        </div>
+                    </span>
+<!-- <span class="sortingFilter">
+     <span>Sort by:</span>
+     <span class="sortingContainer">
+         <select ng-model="sorting">
+                 <option value="">Select Values</option>
+               <option ng-repeat="x in names">{{x}}</option>
+         </select>
+     </span>
+ </span>-->

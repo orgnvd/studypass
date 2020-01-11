@@ -1,0 +1,35 @@
+<div ng-init="fetchSearchBarData()">
+    <form  name="searchform" ng-submit="searchResults()">
+        <div class="row">
+            <div class="col-xs-4">
+                <ui-select name="location"  ng-model="requestData.locationId" required>
+                    <ui-select-match
+                            placeholder="select Location">
+                        {{$select.selected.name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="location.id as location in searchBarData.locations">
+                        <div ng-bind="location.name"></div>
+                    </ui-select-choices>
+                </ui-select>
+
+            </div>
+            <div class="col-xs-8">
+                <ui-select name="topics" ng-model="requestData.topicId" required>
+                    <ui-select-match
+                            placeholder="select Topics">
+                        {{$select.selected.name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="topic.id as topic in searchBarData.topics">
+                        <div ng-bind="topic.name"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <div class="row submitButton">
+            <input type="submit" class="btn mb0 orange-bg white searchButton"
+                   ng-disabled="searchform.$invalid"
+                   value="Search"/>
+
+        </div>
+    </form>
+</div>

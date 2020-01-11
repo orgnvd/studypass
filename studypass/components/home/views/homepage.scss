@@ -1,0 +1,40 @@
+
+.white {
+  color: white;
+}
+.orange{
+  color: rgba(254,180,86,1);
+}
+.orange-bg{
+  background-color: orange;
+}
+
+.homePageContainer {
+  background-color: #7d70d8;
+  min-height: 800px;
+  .title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+  }
+  .column {
+    float: left;
+    width: 50%;
+  }
+
+  .leftSection {
+    padding: 50px;
+    margin: 10px;
+  }
+  .submitButton{
+    float: right;
+    margin: 20px 0px;
+    cursor: pointer;
+  }
+  .searchButton{
+    font-weight: bold;
+  }
+
+
+}

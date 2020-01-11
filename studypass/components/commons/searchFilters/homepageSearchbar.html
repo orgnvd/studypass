@@ -1,0 +1,18 @@
+<form  name="searchform" ng-submit="searchResults()">
+    <div class="banner-form">
+        <select class="bnr-city" ng-model="requestData.locationId">
+            <option ng-value="location.id" ng-repeat="location in searchBarData.locations">{{location.name}}</option>
+
+        </select>
+
+        <select class="" ng-model="requestData.topicId">
+            <option ng-value="topic.id" ng-repeat="topic in searchBarData.topics">{{topic.name}}</option>
+        </select>
+    </div>
+    <div class="row submitButton">
+        <input type="submit" class="btn course-search"
+               ng-disabled="searchform.$invalid"
+               value="Search"/>
+
+    </div>
+</form>

@@ -1,0 +1,45 @@
+<div class="loginModal">
+    <div class="lectureDetails" id="lectureDetails">
+        <div class="modal-header" id="cancelM__header">
+            <span class="flip pull-right c_point faCloseBtn" title="cancel" ng-click="cancel()" id="cancelM__close"> <span class="fIcon iconSize icon-cancel1 db"></span></span>
+            <h4 id="cancelM_title">Login to continue</h4>
+        </div>
+
+        <div class="form" id="form">
+            <form class="db" name="loginForm" ng-submit="loginUser()" id="email_input_form">
+                <div class="formElement" id="email">
+                    <p id="emailInput"><label class="ng-binding">Enter email <span
+                            class="red"></span></label></p>
+                    <input type="text" class="form-control" id="email_ip" required name="email"
+                           placeholder="Enter email Id"
+                           ng-pattern="/^[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*(\.[A-Za-z]{2,4})$/"
+                           ng-model="loginObject.email">
+                    <div id="emailError" class="errorText" ng-if="loginForm.email.$error && loginForm.email.$touched">
+                        <span id="email_required" ng-if="loginForm.email.$error.required"> Email is required.</span>
+                        <span id="email_pattern" ng-if="loginForm.email.$error.pattern">Incorrect email address.</span>
+                    </div>
+                </div>
+                <div class="formElement" id="pwd">
+                    <p id="pwd_label"><label class="ng-binding">Enter Password <span
+                            class="red"></span></label></p>
+                    <input class="form-control" id="password" required name="password"
+                           placeholder="Enter password"
+                           type="password"
+                           ng-model="loginObject.password">
+                    <div id="pwdError" class="errorText" ng-if="loginForm.password.$error && loginForm.password.$touched">
+                        <span id="pwd_required" ng-if="loginForm.password.$error.required"> Password is required.</span>
+                    </div>
+                </div>
+
+                <!--submit /cancel button-->
+                <div class="modal-body" id="cancelM_body">
+                    <div class="text-right flip btnContainer pb10" id="cancelM_btns">
+                        <span class="btn btn-default btn-space" id="cancelM_btnNo" ng-click="cancel()">cancel</span>
+                        <input type="submit" value="Login" ng-disabled="loginForm.$invalid" class="btn btn-primary btn-space" id="cancelM_btnYes">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

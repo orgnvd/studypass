@@ -1,0 +1,9 @@
+.idea/
+logs/*
+node_modules/
+.DS_Store
+studypass/bower_components
+package-lock.json
+npm-debug.log.*
+npm-debug.log
+studypass/config/appConfig.js

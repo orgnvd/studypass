@@ -1,0 +1,28 @@
+.square {
+  height: 50px;
+  width: 50px;
+  background-color: darkblue;
+}
+.siteheader{
+  padding: 10px;
+  overflow: hidden;
+  .headerContent {
+    float: right;
+  }
+}
+.errorText {
+  color: red;
+}
+
+span.resendOTP {
+  cursor: pointer;
+  font-size: 12px;
+  color: blue;
+  font-weight: bold;
+}
+
+.errorBlock {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 40px;
+}

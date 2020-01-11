@@ -1,0 +1,50 @@
+<div class="institute" ng-repeat="institute in searchPageData">
+    <div class="resultRow">
+        <div class="leftView">
+            <div class="image-container">
+                <img ng-src="{{ institute.institute_image ? institute.institute_image : 'components/assets/images/default_institute_image.jpeg'}}"></img>
+            </div>
+        </div>
+        <div class="middleView">
+            <div class="titleContainer">
+                {{institute.institute_name}}
+            </div>
+            <div class="topic_name">
+                {{institute.topic_name}}
+            </div>
+            <div class="topicContainer">
+                <span class="topic" ng-repeat="exam in institute.exams">{{exam}}  </span>
+            </div>
+            <div class="addressContainer">
+                <div class="pinContainer">
+
+                </div>
+                <div class="addressText">
+                    Address: {{institute.institute_contact}}
+                </div>
+            </div>
+            <div class="timingContainer">
+                <div class="timingImage">
+
+                </div>
+                <div class="timing">
+                    Date availablity: <span class="dateBlock" ng-repeat=" date in institute.dates">{{date}} </span>
+                </div>
+                <div class="slotType">
+                    Slots availablity : <span ng-repeat=" timing in institute.timings">{{timing}} </span>
+                </div>
+            </div>
+        </div>
+        <div class="rightView">
+            <div class="viewDetails">
+                                        <span ng-click="viewInstituteDetails(institute.institute_id)">
+                                            View Details>>
+                                        </span>
+            </div>
+            <div class="tooltip-text">
+                (To Book, Contact etc.)
+
+            </div>
+        </div>
+    </div>
+</div>

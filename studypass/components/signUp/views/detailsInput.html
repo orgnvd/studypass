@@ -1,0 +1,78 @@
+<div >
+    <div class="modal-header" id="cancelM__header">
+        <span class="flip pull-right c_point faCloseBtn" title="cancel" ng-click="cancel()" id="cancelM__close"> <span class="fIcon iconSize icon-cancel1 db"></span></span>
+        <h4 id="cancelM_title">Enter details</h4>
+    </div>
+
+    <div class="form" id="form">
+        <form class="db" name="detailsInput" ng-submit="createUserAndSendOTP()" id="email_input_form">
+           <!-- <div class="formElement" id="f_name">
+                <p id="fInput"><label class="ng-binding">First Name<span
+                        class="red">*</span></label></p>
+                <input type="text" class="form-control" id="name" required name="name"
+                       placeholder="Enter Fname"
+                       ng-model="signupObj.firstName">
+                <div id="fnError" class="errorText" ng-if="detailsInput.name.$error && detailsInput.name.$touched">
+                    <span id="email_required" ng-if="detailsInput.name.$error.required">First Name is required.</span>
+                </div>
+            </div>
+            <div class="formElement" id="l_name">
+                <p id="lInput"><label class="ng-binding">Last Name <span
+                        class="red"></span></label></p>
+                <input type="text" class="form-control" id="lname" name="lname"
+                       placeholder="Enter Last Name"
+                       ng-model="signupObj.lastName">
+            </div>-->
+            <div class="formElement" id="email">
+                <p id="emailInput"><label class="ng-binding">Enter email <span
+                        class="red"></span></label></p>
+                <input type="text" class="form-control" id="email_ip" required name="email"
+                       placeholder="Enter email Id"
+                       ng-pattern="/^[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*(\.[A-Za-z]{2,4})$/"
+                       ng-model="signupObj.email">
+                <div id="emailError" class="errorText" ng-if="detailsInput.email.$error && detailsInput.email.$touched">
+                    <span  ng-if="detailsInput.email.$error.required"> Email is required.</span>
+                    <span id="email_pattern" ng-if="detailsInput.email.$error.pattern">Incorrect email address.</span>
+                </div>
+            </div>
+            <div class="formElement" id="pwd">
+                <p id="pwd_label"><label class="ng-binding">Enter Password <span
+                        class="red">*</span></label></p>
+                <input type="text" class="form-control" id="password" required name="password"
+                       placeholder="Enter password"
+                       type="password"
+                       ng-model="signupObj.password">
+                <div id="ppError" class="errorText" ng-if="detailsInput.password.$error && detailsInput.password.$touched">
+                    <span  ng-if="detailsInput.password.$error.required">Password is required.</span>
+                </div>
+            </div>
+            <div class="formElement" id="c_pwd">
+                <p id="c_pwd_label"><label class="ng-binding">Confirm Password <span
+                        class="red">*</span></label></p>
+                <input type="text" class="form-control" id="cPassword" required name="confirmPassword"
+                       placeholder="Confirm password"
+                       type="password"
+                       ng-model="signupObj.password_confirmation">
+                <div id="cppError" class="errorText" ng-if="detailsInput.confirmPassword.$touched">
+                    <span  ng-if="detailsInput.confirmPassword.$error.required">Please re enter password.</span>
+                    <span  ng-if="signupObj.password_confirmation!=signupObj.password && (!detailsInput.confirmPassword.$error.required)">Password mismatch</span>
+                </div>
+            </div>
+
+            <!--submit /cancel button-->
+            <div class="modal-body" id="cancelM_body">
+                <div class="text-right flip btnContainer pb10" id="cancelM_btns">
+                    <span class="btn btn-default btn-space" id="cancelM_btnNo" ng-click="cancel()">cancel</span>
+                    <input type="submit" value="Send OTP" ng-disabled="detailsInput.$invalid || signupObj.password_confirmation!=signupObj.password" class="btn btn-primary btn-space" id="cancelM_btnYes">
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+
+
+</div>

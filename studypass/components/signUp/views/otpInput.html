@@ -1,0 +1,50 @@
+<div class='otpInput'>
+    <div class="modal-header" id="cancelM__header">
+        <span class="flip pull-right c_point faCloseBtn" title="cancel" ng-click="cancel()" id="cancelM__close"> <span class="fIcon iconSize icon-cancel1 db"></span></span>
+        <h4 id="cancelM_title">Enter OTP</h4>
+    </div>
+
+    <div class="form" id="form">
+        <form class="db" name="otpInput" ng-submit="confirmOTP()">
+
+            <div class="formElement" id="email">
+                <p id="Input"><label class="ng-binding">Email address<span
+                        class="red">*</span></label></p>
+                <input type="text" class="form-control"  required name="email"
+                       placeholder="Enter OTP" disabled
+                       ng-model="signupObj.email">
+            </div>
+
+            <div class="formElement" id="OTP">
+                <p id="fInput"><label class="ng-binding">Enter One Time password<span
+                        class="red">*</span></label></p>
+                <input type="text" class="form-control"  required name="otp"
+                       placeholder="Enter OTP"
+                       ng-model="signupObj.token">
+
+                <div id="otpError" class="errorText" ng-if="otpInput.otp.$error && otpInput.otp.$touched">
+                    <span id="email_required" ng-if="otpInput.otp.$error.required"> OTP is required.</span>
+                </div>
+
+            </div>
+            <span  class="resendOTP" ng-click="resendOTP()">Regenerate OTP</span>
+
+
+
+            <!--submit /cancel button-->
+            <div class="modal-body" id="cancelM_body">
+                <div class="text-right flip btnContainer pb10" id="cancelM_btns">
+                    <span class="btn btn-default btn-space" id="cancelM_btnNo" ng-click="cancel()">cancel</span>
+                    <input type="submit" value="Verify OTP" ng-disabled="otpInput.$invalid" class="btn btn-primary btn-space" id="cancelM_btnYes">
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+
+
+</div>

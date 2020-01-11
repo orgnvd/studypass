@@ -1,0 +1,42 @@
+.searchPageContainer {
+  background-color: white; }
+  .searchPageContainer .leftSec {
+    width: 25%;
+    float: left; }
+  .searchPageContainer .rightSec {
+    width: 75%;
+    float: left; }
+  .searchPageContainer .resultContainer .topPanel {
+    min-height: 40px;
+    padding: 5px 0px; }
+    .searchPageContainer .resultContainer .topPanel .appliedFilter .filter {
+      margin: 10px;
+      cursor: pointer;
+      font-size: 12px; }
+    .searchPageContainer .resultContainer .topPanel .sortingFilter {
+      float: right;
+      margin: -20px 30px; }
+  .searchPageContainer .resultContainer .leftPanelContainer {
+    box-shadow: 0 0 30px black;
+    padding: 0 15px 0 15px;
+    width: 80%;
+    margin: 0 10%; }
+    .searchPageContainer .resultContainer .leftPanelContainer .resetButton {
+      float: right; }
+    .searchPageContainer .resultContainer .leftPanelContainer .subTopicName {
+      margin: 5px 10px 0px 20px; }
+  .searchPageContainer .resultContainer .rightPanelContainer .resultRow {
+    overflow: hidden;
+    box-shadow: 0 0 30px black;
+    margin: 30px; }
+    .searchPageContainer .resultContainer .rightPanelContainer .resultRow .leftView {
+      width: 20%;
+      float: left;
+      overflow: hidden;
+      max-height: 150px; }
+    .searchPageContainer .resultContainer .rightPanelContainer .resultRow .middleView {
+      width: 60%;
+      float: left; }
+    .searchPageContainer .resultContainer .rightPanelContainer .resultRow .rightView {
+      width: 20%;
+      float: left; }

@@ -1,0 +1,74 @@
+.instituteContainer {
+  background-color: white;
+  /*institute result row*/ }
+  .instituteContainer .instituteDetails {
+    margin: 32px;
+    border: 1px solid blue;
+    overflow: hidden; }
+    .instituteContainer .instituteDetails .imageSection {
+      float: left;
+      min-height: 200px;
+      width: 200px;
+      overflow: hidden; }
+    .instituteContainer .instituteDetails .detailsSection {
+      font-size: 28px;
+      min-height: 200px;
+      float: left;
+      padding: 5px 20px; }
+      .instituteContainer .instituteDetails .detailsSection .insti_name {
+        font-size: 25px;
+        text-transform: CAPITALIZE; }
+      .instituteContainer .instituteDetails .detailsSection .address {
+        font-size: 10px; }
+    .instituteContainer .instituteDetails .dots {
+      float: right;
+      margin: 100px 29px 0 0; }
+  .instituteContainer .leftSec {
+    width: 25%;
+    float: left; }
+  .instituteContainer .rightSec {
+    width: 75%;
+    float: left; }
+  .instituteContainer .resultContainer .topPanel {
+    min-height: 40px;
+    padding: 5px 0px; }
+    .instituteContainer .resultContainer .topPanel .appliedFilter .filter {
+      margin: 10px;
+      cursor: pointer;
+      font-size: 12px; }
+    .instituteContainer .resultContainer .topPanel .sortingFilter {
+      float: right;
+      margin: -20px 30px; }
+  .instituteContainer .resultContainer .leftPanelContainer {
+    box-shadow: 0 0 30px black;
+    padding: 0 15px 0 15px;
+    width: 80%;
+    margin: 0 10%; }
+    .instituteContainer .resultContainer .leftPanelContainer .resetButton {
+      float: right; }
+  .instituteContainer .instituteSchedule .rowContainer {
+    border: 1px solid gray;
+    overflow: hidden;
+    margin: 8px; }
+    .instituteContainer .instituteSchedule .rowContainer .topicContainer {
+      width: 20%;
+      float: left;
+      overflow: hidden;
+      min-height: 20px; }
+    .instituteContainer .instituteSchedule .rowContainer .examContainer {
+      width: 80%;
+      float: left;
+      overflow: hidden;
+      min-height: 20px; }
+  .instituteContainer .instituteSchedule .slotRow {
+    min-height: 30px;
+    overflow: hidden;
+    margin: 10px; }
+    .instituteContainer .instituteSchedule .slotRow .leftView {
+      width: 50%;
+      float: left;
+      overflow: hidden; }
+    .instituteContainer .instituteSchedule .slotRow .rightView {
+      width: 50%;
+      float: left;
+      overflow: hidden; }

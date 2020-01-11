@@ -1,0 +1,34 @@
+<div class="lectureDetails" id="lectureDetails">
+    <div class="modal-header" id="cancelM__header">
+        <span class="flip pull-right c_point faCloseBtn" title="cancel" ng-click="cancel()" id="cancelM__close"> <span class="fIcon iconSize icon-cancel1 db"></span></span>
+        <h4 id="cancelM_title">Lecture deails</h4>
+    </div>
+
+    <div class="modal-body" id="cancelM_body">
+        <div class="pb25 pt10" id="cancelM_text">
+
+            <div class="categoryContainer">
+                <span class="categoryTitle">Cetegory:</span>
+                <span class="exam" ng-repeat="exam in lecture.exams"> {{exam}} </span>
+            </div>
+            <div class="topic">
+                <span class="topicTitle">Topic:</span>
+                <span class="topicName"> {{schedule.topic_name}} </span>
+            </div>
+
+            <span class="dateContainer">
+                   Date: {{ lecture.lecture_start_time | date :"dd MMM"}}
+            </span>
+            <span class="timing">
+               ( {{ lecture.lecture_start_time | date :"h:mma"}} to  {{ lecture.lecture_end_time | date :"h:mma"}})
+            </span>
+            <span class="credits">
+                Credits:{{lecture.credits}}
+            </span>
+        </div>
+        <div class="text-right flip btnContainer pb10" id="cancelM_btns">
+            <button class="btn btn-default btn-space" id="cancelM_btnNo" ng-click="cancel()">cancel</button>
+            <button class="btn btn-primary btn-space" id="cancelM_btnYes" data-ng-click="bookSlot()">Done</button>
+        </div>
+    </div>
+</div>
