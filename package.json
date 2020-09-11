@@ -7,7 +7,7 @@
     "gulp": "^4.0.2",
     "gulp-replace-task": "^0.1.0",
     "gulp-sass": "~3.0.0",
-    "http-proxy": "1.13.3",
+    "http-proxy": "1.18.1",
     "http-server": "^0.12.0"
   },
   "scripts": {
